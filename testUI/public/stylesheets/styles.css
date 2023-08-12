@@ -1,0 +1,58 @@
+#map {
+  width: 100%;
+  height: calc(90vh - 60px);
+  margin-top: 20px;
+}
+
+.text-block {
+  margin: 20px;
+}
+
+.dropdown-options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.custom-select {
+  width: 30%; /* Adjust the width as needed */
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.gradient-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gradient-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  span {
+    color: #666;
+  }
+}
+
+.progress {
+  height: 5px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: -webkit-linear-gradient(left, #33156d 0%, #f282bc 100%);
+}
+
+.title {
+  font-weight: bold;
+  color: #333;
+}

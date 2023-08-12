@@ -1,0 +1,21 @@
+extends 00_layout
+block content 
+
+  .container-fluid
+    .row
+      .col-lg-6
+        #map
+      .col-lg-6
+        .text-block
+          h2 Risk Distribution
+          p#dynamic-text
+        .text-block
+          h2 Risk Evaluation
+          p This is the second text block.
+        .gradient-bars
+          each bar in [{name: "Humans", value: 50 },{name: "Animals", value: 30 },{name: "Ecosystem", value: 75 },{name: "Infrastructure", value: 80 }]
+            .gradient-bar
+              h4= bar.name
+              .progress
+                .progress-bar(style=`width: ${bar.value}%; background: linear-gradient(to right, #33156d 0%, #f282bc 100%);`)
+    script(src="/javascripts/02_risk_analytics.js", defer)

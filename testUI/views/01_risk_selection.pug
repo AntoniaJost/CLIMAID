@@ -1,0 +1,29 @@
+extends 00_layout
+block content 
+
+  .container-fluid
+    .row
+      .col-lg-6
+        .dropdown-options
+          select.custom-select
+            option(selected) Climate Storyline Scenario
+            option(value="1") Option 1
+            option(value="2") Option 2
+            option(value="3") Option 3
+          select.custom-select
+            option(selected) Climate Risk Parameter
+            option(value="1") Wind risk
+            option(value="2") Flooding
+            option(value="3") Heat Stress
+            option(value="4") Precipitation risk
+            option(value="5") Wildfire
+          select.custom-select
+            option(selected) Year
+            option(value="1") 2023
+            option(value="2") 2040
+            option(value="3") 2050
+          button.btn.btn-primary#submitButton Submit
+    .row
+      .col-lg-12
+        #map
+    script(src="/javascripts/01_risk_selection.js", defer)
