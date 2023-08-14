@@ -4,19 +4,42 @@
   margin-top: 20px;
 }
 
+.video-container {
+  height: calc(90vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+#video-player {
+  object-fit: contain;
+}
+
 .text-block {
-  margin: 20px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.rounded-box {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
 }
 
 .dropdown-options {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .custom-select {
-  width: 30%; /* Adjust the width as needed */
+  width: 30%;
   background-color: #f8f9fa;
   border-radius: 5px;
   padding: 5px;
@@ -38,9 +61,6 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 5px;
-  span {
-    color: #666;
-  }
 }
 
 .progress {
@@ -49,10 +69,50 @@
 
 .progress-bar {
   height: 100%;
-  background: -webkit-linear-gradient(left, #33156d 0%, #f282bc 100%);
 }
 
 .title {
   font-weight: bold;
   color: #333;
+}
+
+.circular-chart {
+  display: block;
+  margin: 10px auto;
+  max-width: 80%;
+  max-height: 250px;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 3.8;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  animation: progress 1s ease-out forwards;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+.percentage {
+  fill: #666;
+  font-family: sans-serif;
+  font-size: 0.5em;
+  text-anchor: middle;
+}
+
+.circular-chart .circle {
+  stroke: #ba110c; 
+}
+
+.color-word {
+  color: #ba110c
 }

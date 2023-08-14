@@ -4,18 +4,31 @@ block content
   .container-fluid
     .row
       .col-lg-6
-        #map
+        .video-container
+          video#video-player(controls autoplay loop muted playsinline style="width: 100%; height: 100%")
+            source(src="/stylesheets/berlin_temp.webm", type="video/webm")
       .col-lg-6
         .text-block
-          h2 Risk Distribution
-          p#dynamic-text
+          .rounded-box 
+            h2 Risk Distribution
+            p#dynamic-text(style="font-size: 20px")
         .text-block
-          h2 Risk Evaluation
-          p This is the second text block.
-        .gradient-bars
-          each bar in [{name: "Humans", value: 50 },{name: "Animals", value: 30 },{name: "Ecosystem", value: 75 },{name: "Infrastructure", value: 80 }]
-            .gradient-bar
-              h4= bar.name
-              .progress
-                .progress-bar(style=`width: ${bar.value}%; background: linear-gradient(to right, #33156d 0%, #f282bc 100%);`)
+          .rounded-box
+            h2 Risk Evaluation
+            p(style="font-size: 20px") The selected conditions will affect our environment like this:
+            .gradient-bars(style="margin-left: 10px")
+              each bar in [{name: "Humans", value: 55 },{name: "Animals", value: 45 },{name: "Ecosystem", value: 60 },{name: "Infrastructure", value: 75 }]
+                .gradient-bar
+                  h5=bar.name
+                  .progress
+                    .progress-bar(style=`width: ${bar.value}%; background: linear-gradient(to right, #ffcbcb 0%, #BA110C 100%);`)
+        .text-block 
+          .rounded-box
+            h2 Rating 
+            p Your overall score is a general overview of how severe the selected scenario will affect your assets.
+            .ellipse-container
+              svg.circular-chart(viewBox="0 0 36 36")
+                  path.circle-bg(d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831")
+                  path.circle(d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831")
+                  text.percentage(x="18" y="20.35") #{scorePercentage}%
     script(src="/javascripts/02_risk_analytics.js", defer)

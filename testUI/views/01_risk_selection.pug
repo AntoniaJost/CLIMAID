@@ -2,28 +2,37 @@ extends 00_layout
 block content 
 
   .container-fluid
-    .row
+    .row.rounded
+      .col-lg-12 
+        .text-block
+          h2 Risk Report
+          p 
+          | Please chose the climate storyline scenario, the climate risk parameter and the year you are interested in. Moreover, please select the area on the map that you are interested in.
+          br 
+          | Once you submit your query, our high-resolution climate model will calculate the corresponding future scenario and provide you a risk evaluation for your specific use case. 
       .col-lg-6
         .dropdown-options
           select.custom-select
-            option(selected) Climate Storyline Scenario
-            option(value="1") Option 1
-            option(value="2") Option 2
-            option(value="3") Option 3
+            option(disabled selected) Climate Storyline Scenario
+            option(value="1") Present
+            option(value="2") +2K
+            option(value="3") +3K
+            option(value="4") +4K
           select.custom-select
-            option(selected) Climate Risk Parameter
+            option(disabled selected) Climate Risk Parameter
             option(value="1") Wind risk
             option(value="2") Flooding
             option(value="3") Heat Stress
             option(value="4") Precipitation risk
             option(value="5") Wildfire
           select.custom-select
-            option(selected) Year
+            option(disabled selected) Year
             option(value="1") 2023
-            option(value="2") 2040
-            option(value="3") 2050
-          button.btn.btn-primary#submitButton Submit
-    .row
+            option(value="2") 2030
+            option(value="3") 2040
+            option(value="4") 2050
+          button.btn.btn-secondary#submitButton Submit
+    .row.rounded
       .col-lg-12
         #map
     script(src="/javascripts/01_risk_selection.js", defer)
